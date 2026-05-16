@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\PregnantWomanController;
 
 // ========== AUTH ==========
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -20,5 +21,7 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
-// ========== DASHBOARD ==========
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+
+Route::resource('pregnant-women', PregnantWomanController::class)->middleware('auth');
