@@ -27,7 +27,7 @@ class RegisterController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'orang_tua', // default role
+            'role' => 'orang_tua',
         ]);
 
         Auth::login($user);

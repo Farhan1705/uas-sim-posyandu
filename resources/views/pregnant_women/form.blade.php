@@ -13,7 +13,6 @@
         @endif
 
         @if(!isset($pregnantWoman))
-        {{-- Pilih ibu yang sudah registrasi --}}
         <div class="mb-5">
             <label class="block text-gray-700 text-sm font-semibold mb-2">Pilih Ibu </label>
             @if($unlinkedUsers->isEmpty())
@@ -37,7 +36,6 @@
             @endif
         </div>
         @else
-        {{-- Edit mode: tampilkan nama ibu (readonly) --}}
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-semibold mb-2">Nama Ibu</label>
             <input type="text" value="{{ $pregnantWoman->name }}" disabled

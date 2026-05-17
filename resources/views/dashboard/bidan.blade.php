@@ -5,8 +5,6 @@
 
 @section('content')
 <div class="space-y-5">
-
-    <!-- Statistik Cards -->
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <a href="{{ route('pregnant-women.index') }}" class="bg-white rounded-xl border border-slate-200 p-4 hover:border-sky-300 transition block">
             <p class="text-xs text-slate-500 mb-1">Ibu Hamil</p>
@@ -27,7 +25,6 @@
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        <!-- Status Gizi Chart -->
         <div class="bg-white rounded-xl border border-slate-200 p-5">
             <h3 class="text-sm font-semibold text-slate-700 mb-4">Status Gizi Balita</h3>
 
@@ -94,7 +91,6 @@
             </div>
         </div>
 
-        <!-- Tabel Balita Terbaru -->
         <div class="bg-white rounded-xl border border-slate-200 p-5 lg:col-span-2">
             <div class="flex justify-between items-center mb-4">
                 <h3 class="text-sm font-semibold text-slate-700">Balita Terbaru</h3>

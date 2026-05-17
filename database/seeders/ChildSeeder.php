@@ -9,7 +9,6 @@ class ChildSeeder extends Seeder
 {
     public function run(): void
     {
-        // Balita untuk Siti Aminah (mother_id = 1)
         Child::create([
             'name' => 'Ahmad Fauzan',
             'mother_id' => 1,
@@ -26,7 +25,6 @@ class ChildSeeder extends Seeder
             'nutrition_status' => 'waspada',
         ]);
 
-        // Balita untuk Dewi Kartika (mother_id = 2)
         Child::create([
             'name' => 'Rizki Pratama',
             'mother_id' => 2,
@@ -43,7 +41,6 @@ class ChildSeeder extends Seeder
             'nutrition_status' => 'normal',
         ]);
 
-        // Balita untuk Ratna Sari (mother_id = 3)
         Child::create([
             'name' => 'Muhammad Rizky',
             'mother_id' => 3,

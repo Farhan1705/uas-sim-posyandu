@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('husband_name');
             $table->date('due_date');
-            $table->integer('gestational_age'); // usia kehamilan dalam minggu
+            $table->integer('gestational_age');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

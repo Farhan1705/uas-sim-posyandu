@@ -26,12 +26,6 @@ class Immunization extends Model
         return $this->belongsTo(Child::class);
     }
 
-    /**
-     * Status dihitung otomatis berdasarkan tanggal lahir anak dan age_target
-     * - done    : date_given sudah diisi
-     * - missed  : belum diberikan dan tanggal target sudah lewat
-     * - pending : belum diberikan dan tanggal target belum lewat
-     */
     public function getStatusAttribute(): string
     {
         if ($this->date_given) {

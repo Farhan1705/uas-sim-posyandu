@@ -16,7 +16,6 @@ class DashboardController extends Controller
         $user = auth()->user();
         
         if ($user->role == 'bidan') {
-            // Data untuk dashboard bidan
             $totalPregnant = PregnantWoman::count();
             $totalChildren = Child::count();
             $totalMeasurements = Measurement::count();
@@ -41,7 +40,6 @@ class DashboardController extends Controller
             ));
         } 
         else {
-            // Data untuk dashboard orang tua
             $pregnantWoman = PregnantWoman::where('user_id', $user->id)->first();
             
             if ($pregnantWoman) {

@@ -9,7 +9,6 @@ class PregnantWomanSeeder extends Seeder
 {
     public function run(): void
     {
-        // Ibu hamil untuk Siti Aminah (user_id = 2)
         PregnantWoman::create([
             'name' => 'Siti Aminah',
             'husband_name' => 'Bambang Supriadi',
@@ -18,7 +17,6 @@ class PregnantWomanSeeder extends Seeder
             'user_id' => 2,
         ]);
 
-        // Ibu hamil untuk Dewi Kartika (user_id = 3)
         PregnantWoman::create([
             'name' => 'Dewi Kartika',
             'husband_name' => 'Andi Wijaya',
@@ -27,7 +25,6 @@ class PregnantWomanSeeder extends Seeder
             'user_id' => 3,
         ]);
 
-        // Ibu hamil untuk Ratna Sari (user_id = 4)
         PregnantWoman::create([
             'name' => 'Ratna Sari',
             'husband_name' => 'Agus Prasetyo',

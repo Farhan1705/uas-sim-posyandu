@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('child_id')->constrained()->onDelete('cascade');
             $table->string('vaccine_name');
-            $table->integer('age_target'); // target umur dalam bulan
+            $table->integer('age_target');
             $table->date('date_given')->nullable();
             $table->enum('status', ['pending', 'done', 'missed'])->default('pending');
             $table->timestamps();
