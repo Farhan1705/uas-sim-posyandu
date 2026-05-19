@@ -5,6 +5,7 @@
 
 @section('content')
 <div class="space-y-5">
+    <!-- Tombol Navigasi -->
     <div class="flex justify-between items-center">
         <div class="flex space-x-2">
             <a href="{{ route('children.show', $child->id) }}" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg text-sm transition">
@@ -19,6 +20,7 @@
         </div>
     </div>
 
+    <!-- Info Balita -->
     <div class="bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl shadow-lg p-5 text-white">
         <div class="flex justify-between items-center">
             <div>
@@ -58,6 +60,7 @@
         </div>
     </div>
 
+    <!-- Hasil AI -->
     <div class="bg-white rounded-xl shadow-md p-6">
         <div class="flex items-center mb-4">
             <div class="bg-purple-100 rounded-full p-2 mr-3">
@@ -81,6 +84,7 @@
         </div>
     </div>
 
+    <!-- Tips Tambahan -->
     <div class="bg-blue-50 rounded-xl p-5 border border-blue-200">
         <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
             <i class="fas fa-lightbulb text-yellow-500 mr-2"></i> Tips untuk Orang Tua
