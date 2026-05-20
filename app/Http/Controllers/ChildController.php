@@ -11,11 +11,6 @@ use Carbon\Carbon;
 
 class ChildController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         Gate::authorize('bidan');
@@ -52,7 +47,7 @@ class ChildController extends Controller
         ]);
 
         Child::create(array_merge($request->only(['name', 'mother_id', 'birth_date', 'gender']), [
-            'nutrition_status' => 'normal',
+            'nutrition_status' => 'normal', // default, akan diperbarui otomatis saat pengukuran pertama
         ]));
 
         return redirect()->route('children.index')
@@ -104,6 +99,7 @@ class ChildController extends Controller
             ->with('success', 'Data balita berhasil diupdate');
     }
 
+ 
     public function destroy($id)
     {
         Gate::authorize('bidan');
@@ -133,10 +129,10 @@ class ChildController extends Controller
                 ->with('error', 'Belum ada data pengukuran untuk balita ini');
         }
         
-        $labels = [];
-        $weights = [];
-        $heights = [];
-        $zones = [];
+        $labels = [];      
+        $weights = [];     
+        $heights = [];     
+        $zones = [];       
         
         foreach ($child->measurements as $measurement) {
             $labels[] = $measurement->measurement_date->format('d/m/Y');
@@ -152,6 +148,7 @@ class ChildController extends Controller
 
     public function aiRecommendation($id)
     {
+
         if (auth()->user()->role !== 'orang_tua') {
             abort(403, 'Fitur ini hanya untuk orang tua.');
         }
@@ -248,12 +245,14 @@ Gunakan bahasa Indonesia yang hangat dan mudah dipahami. Jangan gunakan tanda **
                 continue;
             }
 
+            // Numbered heading: "1. Judul" tanpa konten di baris yang sama
             if (preg_match('/^(\d+)\.\s+(.+)$/', $line, $m)) {
                 if ($inList) { $html .= '</ul>'; $inList = false; }
                 $html .= '<p class="font-semibold text-slate-800 mt-4 mb-1">' . $m[1] . '. ' . htmlspecialchars($m[2]) . '</p>';
                 continue;
             }
 
+            // Bullet list: "- item"
             if (preg_match('/^- (.+)$/', $line, $m)) {
                 if (!$inList) {
                     $html .= '<ul class="list-disc ml-5 space-y-1 mb-2">';

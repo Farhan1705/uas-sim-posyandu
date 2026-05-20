@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Gate;
 
 class ImmunizationController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         Gate::authorize('bidan');

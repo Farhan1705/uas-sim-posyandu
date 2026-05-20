@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Gate;
 
 class MeasurementController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index($childId)
     {
         $child = Child::findOrFail($childId);
